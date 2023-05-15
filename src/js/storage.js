@@ -1,11 +1,13 @@
-const save = (key, value) => {
+import throttle from 'lodash.throttle';
+
+const save = throttle((key, value) => {
   try {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
   } catch (error) {
     console.error("Set state error: ", error.message);
   }
-};
+}, 500);
 
 const load = key => {
   try {
@@ -19,7 +21,7 @@ const load = key => {
 const remove = key => {
     try {
         localStorage.removeItem(key);
-        
+
       } catch (error) {
     console.error("Get state error: ", error.message);
   }
