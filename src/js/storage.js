@@ -1,4 +1,4 @@
-// мої функції для роботи з local storage
+
 
 import throttle from 'lodash.throttle';
 
