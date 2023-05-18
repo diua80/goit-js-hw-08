@@ -1,3 +1,5 @@
+// мої функції для роботи з local storage
+
 import throttle from 'lodash.throttle';
 
 const save = throttle((key, value) => {
